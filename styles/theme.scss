@@ -1,0 +1,292 @@
+///////////////////////////////////////////
+// *** THEME STYLES & GLOBAL VARIABLES ***
+///////////////////////////////////////////
+
+//* Fonts from adobe
+@import url('https://use.typekit.net/lau7jir.css');
+//? To edit: https://fonts.adobe.com/my_fonts */
+
+:root {
+  //* COLOR PALLATE
+  // --dark-blue: #000a12;
+  --dark-blue: #222c34;
+  --teal: #428e92;
+  --dark-teal: #21393b;
+  --mist: #263238;
+  --light-grey: #8c8c8c;
+  --grey: #484848;
+  --dark-grey: #212121;
+  --main-bg-color: #040f18;
+  --alt-bg-color: #21393b;
+  --text-color: aliceblue;
+  //* SPACING
+  --spacer: 1em;
+  --spacer-2: calc(var(--spacer) * 2);
+  --spacer-3: calc(var(--spacer) * 3);
+  --spacer-half: calc(var(--spacer) / 2);
+  --spacer-quater: calc(var(--spacer) / 4);
+  --container-width: 85%;
+  //* NAVIGATION
+  --side-sheet-width: 66.6667vw;
+  --navbar-height: clamp(60px, 10vh, 80px);
+  //* TYPOGRAPHY
+  --font-base: 1.25rem;
+  --font-scale-2: calc(var(--font-base) * 1.25);
+  --font-scale-3: calc(var(--font-base) * 2);
+  --font-scale-4: calc(var(--font-base) * 2.5);
+  --font-1: printf, sans-serif;
+  --font-2: metallophile-sp8, sans-serif;
+  //* OTHER
+  --shadow: -1px 1px 2px #000;
+  --transition: all 0.75s ease-out;
+}
+
+* {
+  transition: var(--transition);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--font-base);
+  font-family: var(--font-2);
+  transition: var(--transition);
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+  padding: 0;
+  margin: 0;
+}
+
+main,
+section {
+  padding: var(--spacer-3) 0;
+  // margin: var(--spacer) 0;
+}
+
+h1 {
+  font-family: var(--font-1);
+  font-size: var(--font-scale-4);
+}
+
+h2 {
+  font-family: var(--font-1);
+  font-size: var(--font-scale-3);
+}
+
+h3 {
+  font-size: var(--font-scale-3);
+  font-weight: 900;
+}
+
+h4 {
+  font-family: var(--font-1);
+  font-size: var(--font-scale-2);
+}
+
+h5 {
+  font-family: var(--font-1);
+  font-size: var(--font-base);
+}
+
+h6 {
+  font-size: var(--font-base);
+  font-weight: 900;
+}
+
+a {
+  color: var(--teal);
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+p {
+  font-family: var(--font-2);
+  font-weight: 100;
+  font-size: var(--font-base);
+  line-height: 1.4em;
+  max-width: 60ch;
+  margin-bottom: var(--spacer);
+}
+
+blockquote {
+  font-family: var(--font-1);
+  // font-size: var(--font-scale-2);
+  line-height: 1.4em;
+  max-width: 45ch;
+  margin-bottom: var(--spacer);
+}
+
+hr {
+  margin: var(--spacer-quater) 0 var(--spacer-2) 0;
+}
+
+.container {
+  width: var(--container-width);
+  // width: clamp(85%, var(--container-width), 1800px);
+  margin: 0 auto;
+}
+
+.btn {
+  //* Changing only font-size will scale padding too. Padding must use em, not rems.
+  //? https://www.kevinpowell.co/article/scaling-buttons-with-css-custom-properties/
+  --btn-scale: 1em;
+  // min-width: 48px; //* Makes sure buttons can easily be pressed on touch screens
+  // min-height: 48px;
+  padding: calc(var(--btn-scale) * 0.85) calc(var(--btn-scale) * 1.25);
+  font-size: calc(var(--btn-scale) * 0.85);
+  font-family: var(--font-1);
+  text-transform: uppercase;
+  background: var(--alt-bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  text-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  &.small {
+    --btn-scale: 0.75em;
+  }
+  &.large {
+    --btn-scale: 1.25em;
+  }
+  &.x-large {
+    --btn-scale: 1.5em;
+  }
+  &.outline {
+    background-color: transparent;
+    border: 2px solid var(--mist);
+    padding: calc(var(--btn-scale) * 0.85 - 2px)
+      calc(var(--btn-scale) * 1.25 - 2px);
+  }
+  &.full-width {
+    width: 100%;
+    margin: var(--spacer) 0;
+    text-align: center;
+  }
+  &:hover,
+  &:focus {
+    position: relative;
+    bottom: 2px;
+    background-color: var(--teal);
+    box-shadow: var(--shadow);
+  }
+}
+
+//* General sibling selector selects every .btn after the first. No need for button group class for margin anymore!
+.btn ~ .btn:not(.full-width) {
+  margin-left: var(--spacer-half);
+}
+
+///////////////////////////////////////////
+// *** PAGE STYLES ***
+///////////////////////////////////////////
+// *** HOMEPAGE ***
+main#intro {
+  // text-align: center;
+  p {
+    // margin: 0 auto var(--spacer);
+  }
+}
+
+section#latest_release {
+  background: url(../public/imgs/artwork/KellyComeHome.jpg) center / cover;
+  text-shadow: var(--shadow);
+  padding: 0;
+  //! Filters not yet supported on Firefox as of April 2021
+  #filter {
+    padding: var(--spacer-3) 0;
+    backdrop-filter: blur(3px) saturate(40%);
+  }
+}
+
+section#explore {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // width: 100%;
+  .explore-column {
+    width: 50%;
+    height: 33vh;
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0%);
+    border: 1px solid var(--grey);
+    //* Centers the h3 inside each column
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover,
+    &:focus,
+    &:active {
+      width: 50%;
+      filter: saturate(100%);
+      border: 1px solid var(--teal);
+      //* linking is done through Next.js event listener so cursor needs to be changed on hover
+      cursor: pointer;
+      h3 {
+        color: var(--teal);
+      }
+    }
+    &#column_1 {
+      background-image: url(../public/imgs/photos/tsm-1.jpg);
+    }
+    &#column_2 {
+      background-image: url(../public/imgs/photos/tsm-2.jpg);
+    }
+    &#column_3 {
+      background-image: url(../public/imgs/photos/tsm-3.jpg);
+    }
+    &#column_4 {
+      background-image: url(../public/imgs/photos/tsm-grey.jpg);
+    }
+    h3 {
+      // color: var(--dark-grey);
+      text-transform: uppercase;
+      text-shadow: var(--shadow);
+    }
+  }
+}
+
+///////////////////////////////////////////
+// *** MEDIA QUERIES ***
+///////////////////////////////////////////
+// *** MOBILE ***
+//* This one is max-width instead. Applies to everything 480px wide and SMALLER!
+$breakpoint-mobile: 480px;
+@media (max-width: $breakpoint-mobile) {
+  //* Helps make buttons easier to tap with fingers
+  .btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+// *** TABLETS ***
+//* Applies to everything 768px wide and larger.
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+  :root {
+    --font-base: 1.75rem;
+  }
+}
+
+// *** LARGE SCREENS ***
+//* Applies to everything 1200px wide and larger.
+$breakpoint-tablet: 1200px;
+@media (min-width: $breakpoint-tablet) {
+  :root {
+    --container-width: 90%;
+    --font-base: 2.25rem;
+  }
+  section#explore {
+    flex-wrap: nowrap;
+    .explore-column {
+      height: clamp(40vw, 66.6667vh, 100vh);
+      width: 25%;
+    }
+  }
+}

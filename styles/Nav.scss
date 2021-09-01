@@ -1,0 +1,227 @@
+// // * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-size: 20px;
+//   list-style: none;
+//   line-height: 1.2em;
+// }
+
+//* Applied to the body element to prevent scrolling while the side-nav is open
+// .pause-scroll {
+//   overflow: hidden;
+// }
+
+//* Scopes custom properties and styles both nav elements.
+nav {
+  //! Currently theme.scss set these variables! Helpful for theme consistency.
+  // --main-bg-color: black;
+  // --alt-bg-color: red;
+  // --text-color: white;
+  // --container-width: 85%;
+  // --side-sheet-width: 66.6667vw;
+  // --navbar-height: 10vh;
+  // --transition: all 0.75s ease-out;
+  font-size: calc(var(--font-base) * 0.6667);
+  font-family: var(--font-1);
+  background-color: black;
+  color: var(--text-color);
+  text-decoration: none;
+  > ul {
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    &:focus,
+    &:active {
+      // margin-bottom: 0.33em;
+      padding: 0.33em 0;
+      outline: 2px solid var(--teal);
+    }
+  }
+  svg {
+    font-size: 2em; //? I believe this is equivalent to calc(var(--font-base) * 2)
+  }
+}
+
+//* Styles the navbar but not the side-sheet.
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  // background-color: transparent;
+  > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: var(--container-width);
+    // height: var(--navbar-height);
+    margin: 0 auto;
+    padding: 0;
+    li.nav-item {
+      display: flex;
+      align-items: center;
+      height: var(--navbar-height);
+    }
+  }
+  a.nav-link {
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    padding: 0 1vw;
+    height: 100%;
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--teal);
+      border-bottom: 0.33em solid var(--teal);
+      outline: none;
+      // background-color: var(--alt-bg-color);
+    }
+  }
+  #navbar_brand {
+    margin: 0 auto 0 0;
+    a {
+      padding-left: 0;
+      transition: all 1s ease-in-out;
+      &:hover,
+      &:focus,
+      &:active {
+        font-size: 1.03em;
+        color: var(--teal);
+        // text-decoration: underline;
+        border-bottom: 2px solid var(--teal);
+        outline: none;
+        // background-color: var(--alt-bg-color);
+      }
+    }
+  }
+  #nav_open_item {
+    cursor: pointer;
+    display: none;
+    padding-right: 0;
+    &:hover,
+    &:focus,
+    &:active {
+      font-size: 1.03em;
+      color: #fff;
+      outline: 2px solid var(--teal);
+    }
+  }
+}
+
+#click_blocker {
+  display: none;
+  &.on {
+    display: block;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000088;
+    overflow: hidden;
+  }
+}
+
+#side_sheet {
+  // touch-action: pan-x;
+  font-size: var(--font-base);
+  transition: var(--transition);
+  width: var(--side-sheet-width);
+  max-width: 400px;
+  position: fixed;
+  right: calc(0px - var(--side-sheet-width));
+  top: 0;
+  z-index: 200;
+  background-color: var(--main-bg-color);
+  height: 100vh;
+  display: none;
+  // margin: 0;
+  // padding: 0;
+  &.open {
+    right: 0px;
+  }
+  li > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--navbar-height);
+  }
+  .side-nav-link {
+    transition: var(--transition);
+    margin: 1px 0;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // width: var(--side-sheet-width);
+    // height: var(--navbar-height);
+    &:hover,
+    &:focus,
+    &:active {
+      color: white;
+      background-color: var(--teal);
+      outline: none;
+    }
+  }
+  #side_nav_brand {
+    // height: var(--navbar-height);
+    padding: 0 5%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    transition: var(--transition);
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--teal);
+      // text-decoration: underline;
+      // background-color: var(--alt-bg-color);
+      // border-bottom: 2px solid var(--alt-bg-color);
+      // font-size: 1.1em;
+      // outline: none;
+    }
+  }
+  #nav_close_item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 5%;
+    margin: 0;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--teal);
+      outline: none;
+    }
+  }
+}
+//? Typically tablet breakpoint is 768px but I think the nav looks better for this project when breaking sooner.
+$breakpoint-tablet: 1200px;
+@media (max-width: $breakpoint-tablet) {
+  #navbar {
+    font-size: var(--font-base);
+    > ul {
+      li {
+        padding: 0;
+      }
+    }
+    a.nav-link {
+      display: none;
+    }
+    #nav_open_item {
+      display: flex;
+    }
+  }
+  #side_sheet {
+    display: block;
+  }
+}
+// $breakpoint-mobile: 480px;
+// @media (max-width: $breakpoint-mobile) {
+// }
