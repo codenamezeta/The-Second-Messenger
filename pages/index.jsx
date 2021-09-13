@@ -1,7 +1,7 @@
 import Nav from '../components/nav'
 import Button from '../components/Buttons'
 // import Image from 'next/image'
-import Newsletter from '../components/Newsletter'
+import SubscribeFormMC from '../components/newsletter/SubscribeFormMC'
 import Link from 'next/link'
 // import { useRef } from 'react'
 import NewsTeaser from '../components/NewsTeaser'
@@ -31,7 +31,8 @@ const index = () => {
 
       <LatestRelease />
 
-      <Newsletter />
+      {/* <SubscribeForm /> */}
+      <SubscribeFormMC />
 
       <section className='grid explore' id='explore'>
         <Link href='/music'>

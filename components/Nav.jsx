@@ -30,7 +30,7 @@ const Nav = () => {
                 // objectFit
                 height='64'
                 width='179'
-                alt="The Second Messenger's Logo"
+                alt='TSM'
               />
             </a>
           </li>

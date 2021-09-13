@@ -1,0 +1,66 @@
+// *** Mail Chimp Subscribe Form SIGNUP SECTION STYLES ***
+section.newsletter-signup {
+  --input-color: var(--light-grey);
+  background-color: var(--mist);
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacer);
+    h4 {
+      grid-column: 1/-1;
+    }
+    input[type='text'] {
+      background-color: transparent;
+      border-top: none;
+      border-right: none;
+      border-bottom: 2px solid var(--input-color);
+      border-left: 1px solid var(--input-color);
+      border-radius: 0 0 0 4px;
+      font-size: 1em;
+      padding: 0 0 0 var(--spacer-half);
+      margin: var(--spacer) 0;
+      color: var(--input-color);
+      flex-grow: 1;
+      min-width: 48%;
+      &::placeholder {
+        color: var(--input-color);
+      }
+      &:focus {
+        outline: none;
+        --input-color: var(--teal);
+        color: var(--text-color);
+        box-shadow: var(--shadow);
+        text-shadow: var(--shadow);
+      }
+      // &#name {
+      //   margin-right: var(--spacer-half);
+      // }
+    }
+    button {
+      margin: 0 0 0 auto;
+      // width: 100%;
+    }
+    p {
+      color: var(--input-color);
+      font-size: 0.5em;
+      min-width: 100%;
+      text-align: right;
+      margin: var(--spacer-half) 0;
+    }
+    button,
+    p {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+$breakpoint-tablet: 1200px;
+@media (max-width: $breakpoint-tablet) {
+  section.newsletter-signup {
+    form {
+      input[type='text'] {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
