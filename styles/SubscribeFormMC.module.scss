@@ -1,7 +1,7 @@
 // *** Mail Chimp Subscribe Form SIGNUP SECTION STYLES ***
 section.newsletter-signup {
-  --input-color: var(--light-grey);
-  background-color: var(--mist);
+  --input-color: var(--text-color);
+  background-color: var(--color-3);
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -27,7 +27,7 @@ section.newsletter-signup {
       }
       &:focus {
         outline: none;
-        --input-color: var(--teal);
+        --input-color: var(--color-1);
         color: var(--text-color);
         box-shadow: var(--shadow);
         text-shadow: var(--shadow);

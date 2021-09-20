@@ -8,15 +8,15 @@ import Image from 'next/image'
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false)
 
-  useEffect(() => {
-    if (navOpen === true) {
-      document.body.style.overflow = 'hidden'
-      console.log(document.body.style.overflow)
-    } else {
-      document.body.style.overflow = ''
-      console.log(document.body.style.overflow)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (navOpen === true) {
+  //     document.body.style.overflow = 'hidden'
+  //     console.log(document.body.style.overflow)
+  //   } else {
+  //     document.body.style.overflow = ''
+  //     console.log(document.body.style.overflow)
+  //   }
+  // }, [])
 
   return (
     <>

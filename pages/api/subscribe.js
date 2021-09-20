@@ -1,7 +1,9 @@
 export default async function subscribe(req, res) {
   if (req.method === 'POST') {
     const subscriber = req.body
-    console.log(subscriber)
+    console.log(
+      `Subscribe form submitted this subscriber: ${JSON.stringify(subscriber)}`
+    )
     //* Get environment variables
     //@ MailChimp API Key
     const apiKey = process.env.MC_API_KEY
@@ -10,8 +12,8 @@ export default async function subscribe(req, res) {
     //@ TSM's Mail Chimp List ID
     const listId = process.env.MC_TSM_LIST_ID
     //* Build the Mail Chimp Subscribe API route
-    const urlMC = `${apiRoot}lists/${listId}`
-    console.log(urlMC)
+    // const urlMC = `${apiRoot}lists/${listId}`
+    // console.log(urlMC)
     const subscriberData = JSON.stringify({
       members: [
         {
@@ -40,14 +42,31 @@ export default async function subscribe(req, res) {
       'https://us14.api.mailchimp.com/3.0/lists/d31709f97e',
       requestOptions
     )
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log('error', error))
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        if (data.error_count) {
+          let error = data.errors[0].error
+          console.log(error)
+          res.status(500).send(error)
+        } else if (data.total_created) {
+          // console.log('Success?')
+          res
+            .status(200)
+            .send(
+              `Thank you! ${data.new_members[0].email_address} has been subscribed.`
+            )
+        } else if (data.total_updated) {
+          res
+            .status(200)
+            .send(
+              `Thank you! ${data.updated_members[0].email_address} account settings have been updated.`
+            )
+        } else
+          res.send(
+            'Not sure that worked or not. Please email admins@thesecondmessenger.com to subscribe manually.'
+          )
+      })
+      .catch((error) => console.log('Error: ', error))
   }
 }
-
-// res.json({
-//   status: 'Success',
-//   Email: subscriber.subscriberEmail,
-//   Name: subscriber.subscriberName,
-// })

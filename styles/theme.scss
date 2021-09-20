@@ -4,26 +4,28 @@
 
 //* Fonts from adobe
 @import url('https://use.typekit.net/lau7jir.css');
-//? To edit: https://fonts.adobe.com/my_fonts */
+//? To edit: https://fonts.adobe.com/my_fonts
 
 :root {
   //* COLOR PALLATE
-  // --dark-blue: #000a12;
-  --dark-blue: #222c34;
-  --teal: #428e92;
-  --dark-teal: #21393b;
-  --mist: #263238;
-  --light-grey: #8c8c8c;
-  --grey: #484848;
-  --dark-grey: #212121;
-  --main-bg-color: #040f18;
-  --alt-bg-color: #21393b;
   --text-color: aliceblue;
+  --color-1: #428e92;
+  --color-2: #040f18;
+  --color-3: #263238;
+  --color-4: #21393b;
+  --color-5: #222c34;
+  --color-6: #21393b;
+  --color-7: #8c8c8c;
+  --color-8: #484848;
+  --color-9: #212121;
+  --color-10: #000a12;
   //* SPACING
   --spacer: 1em;
   --spacer-2: calc(var(--spacer) * 2);
   --spacer-3: calc(var(--spacer) * 3);
+  --spacer-4: calc(var(--spacer) * 4);
   --spacer-half: calc(var(--spacer) / 2);
+  --spacer-third: calc(var(--spacer) / 3);
   --spacer-quater: calc(var(--spacer) / 4);
   --container-width: 85%;
   //* NAVIGATION
@@ -34,8 +36,8 @@
   --font-scale-2: calc(var(--font-base) * 1.25);
   --font-scale-3: calc(var(--font-base) * 2);
   --font-scale-4: calc(var(--font-base) * 2.5);
-  --font-1: printf, sans-serif;
-  --font-2: metallophile-sp8, sans-serif;
+  --font-1: 'printf', sans-serif;
+  --font-2: 'metallophile-sp8', sans-serif;
   //* OTHER
   --shadow: -1px 1px 2px #000;
   --transition: all 0.75s ease-out;
@@ -53,7 +55,7 @@ body {
   font-family: var(--font-2);
   transition: var(--transition);
   color: var(--text-color);
-  background-color: var(--main-bg-color);
+  background-color: var(--color-2);
   padding: 0;
   margin: 0;
 }
@@ -95,7 +97,7 @@ h6 {
 }
 
 a {
-  color: var(--teal);
+  color: var(--color-1);
   &:hover {
     color: var(--text-color);
   }
@@ -138,7 +140,7 @@ hr {
   font-size: calc(var(--btn-scale) * 0.85);
   font-family: var(--font-1);
   text-transform: uppercase;
-  background: var(--alt-bg-color);
+  background: var(--color-4);
   color: var(--text-color);
   text-decoration: none;
   text-align: center;
@@ -157,7 +159,7 @@ hr {
   }
   &.outline {
     background-color: transparent;
-    border: 2px solid var(--mist);
+    border: 2px solid var(--color-3);
     padding: calc(var(--btn-scale) * 0.85 - 2px)
       calc(var(--btn-scale) * 1.25 - 2px);
   }
@@ -170,7 +172,7 @@ hr {
   &:focus {
     position: relative;
     bottom: 2px;
-    background-color: var(--teal);
+    background-color: var(--color-1);
     box-shadow: var(--shadow);
   }
 }
@@ -214,7 +216,7 @@ section#explore {
     background-position: center;
     background-size: cover;
     filter: saturate(0%);
-    border: 1px solid var(--grey);
+    border: 1px solid var(--color-8);
     //* Centers the h3 inside each column
     display: flex;
     align-items: center;
@@ -224,11 +226,11 @@ section#explore {
     &:active {
       width: 50%;
       filter: saturate(100%);
-      border: 1px solid var(--teal);
+      border: 1px solid var(--color-1);
       //* linking is done through Next.js event listener so cursor needs to be changed on hover
       cursor: pointer;
       h3 {
-        color: var(--teal);
+        color: var(--color-1);
       }
     }
     &#column_1 {
@@ -244,7 +246,7 @@ section#explore {
       background-image: url(../public/imgs/photos/tsm-grey.jpg);
     }
     h3 {
-      // color: var(--dark-grey);
+      // color: var(--color-9);
       text-transform: uppercase;
       text-shadow: var(--shadow);
     }

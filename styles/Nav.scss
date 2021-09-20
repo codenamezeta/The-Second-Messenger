@@ -15,7 +15,7 @@
 //* Scopes custom properties and styles both nav elements.
 nav {
   //! Currently theme.scss set these variables! Helpful for theme consistency.
-  // --main-bg-color: black;
+  // --color-2: black;
   // --alt-bg-color: red;
   // --text-color: white;
   // --container-width: 85%;
@@ -38,7 +38,7 @@ nav {
     &:active {
       // margin-bottom: 0.33em;
       padding: 0.33em 0;
-      outline: 2px solid var(--teal);
+      outline: 2px solid var(--color-1);
     }
   }
   svg {
@@ -75,8 +75,8 @@ nav {
     &:hover,
     &:focus,
     &:active {
-      color: var(--teal);
-      border-bottom: 0.33em solid var(--teal);
+      color: var(--color-1);
+      border-bottom: 0.33em solid var(--color-1);
       outline: none;
       // background-color: var(--alt-bg-color);
     }
@@ -90,9 +90,9 @@ nav {
       &:focus,
       &:active {
         font-size: 1.03em;
-        color: var(--teal);
+        color: var(--color-1);
         // text-decoration: underline;
-        border-bottom: 2px solid var(--teal);
+        border-bottom: 2px solid var(--color-1);
         outline: none;
         // background-color: var(--alt-bg-color);
       }
@@ -107,7 +107,7 @@ nav {
     &:active {
       font-size: 1.03em;
       color: #fff;
-      outline: 2px solid var(--teal);
+      outline: 2px solid var(--color-1);
     }
   }
 }
@@ -127,6 +127,7 @@ nav {
   }
 }
 
+//* Styles the side-sheet but not the navbar.
 #side_sheet {
   // touch-action: pan-x;
   font-size: var(--font-base);
@@ -137,7 +138,7 @@ nav {
   right: calc(0px - var(--side-sheet-width));
   top: 0;
   z-index: 200;
-  background-color: var(--main-bg-color);
+  background-color: var(--color-2);
   height: 100vh;
   display: none;
   // margin: 0;
@@ -163,7 +164,7 @@ nav {
     &:focus,
     &:active {
       color: white;
-      background-color: var(--teal);
+      background-color: var(--color-1);
       outline: none;
     }
   }
@@ -178,7 +179,7 @@ nav {
     &:hover,
     &:focus,
     &:active {
-      color: var(--teal);
+      color: var(--color-1);
       // text-decoration: underline;
       // background-color: var(--alt-bg-color);
       // border-bottom: 2px solid var(--alt-bg-color);
@@ -196,7 +197,7 @@ nav {
     &:hover,
     &:focus,
     &:active {
-      color: var(--teal);
+      color: var(--color-1);
       outline: none;
     }
   }
