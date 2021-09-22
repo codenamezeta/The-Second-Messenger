@@ -33,6 +33,10 @@
   --navbar-height: clamp(60px, 10vh, 80px);
   //* TYPOGRAPHY
   --font-base: 1.25rem;
+  --font-scale-quarter: calc(var(--font-base) / 4);
+  --font-scale-third: calc(var(--font-base) / 3);
+  --font-scale-small: calc(var(--font-base) * 0.9167);
+  --font-scale-half: calc(var(--font-base) / 2);
   --font-scale-2: calc(var(--font-base) * 1.25);
   --font-scale-3: calc(var(--font-base) * 2);
   --font-scale-4: calc(var(--font-base) * 2.5);

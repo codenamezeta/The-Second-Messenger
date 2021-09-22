@@ -37,22 +37,22 @@ const index = () => {
       <section className='grid explore' id='explore'>
         <Link href='/music'>
           <div className='explore-column' id='column_1'>
-            <h3>Music</h3>
+            <h4>Music</h4>
           </div>
         </Link>
         <Link href='/bio'>
           <div className='explore-column' id='column_2'>
-            <h3>Bio</h3>
+            <h4>Bio</h4>
           </div>
         </Link>
         <Link href='/merch'>
           <div className='explore-column' id='column_3'>
-            <h3>Merch</h3>
+            <h4>Merch</h4>
           </div>
         </Link>
         <Link href='/news'>
           <div className='explore-column' id='column_4'>
-            <h3>News</h3>
+            <h4>News</h4>
           </div>
         </Link>
       </section>
