@@ -1,34 +1,29 @@
-#news_teaser {
+section#news_teaser {
   article {
-    display: grid;
     margin-bottom: var(--spacer-2);
-    padding: var(--spacer-half) var(--spacer-half) var(--spacer) 0;
-    border-radius: 8px;
-    box-shadow: 3px 3px 3px var(--color-1), -1px -1px 1px var(--color-1);
-    * {
+    padding-bottom: var(--spacer);
+    box-shadow: -2px 0px 4px var(--color-3);
+    border-radius: 4px;
+    :not(img) {
+      padding: 0 var(--spacer-half);
+    }
+    img {
       width: 100%;
-      grid-column: 1/-1;
+      border-radius: 4px 4px 0 0;
+      margin-bottom: var(--spacer-half);
     }
   }
 }
 
 // *** TABLETS ***
 //* Applies to everything 768px wide and larger.
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 800px;
 @media (min-width: $breakpoint-tablet) {
-  #news_teaser {
+  section#news_teaser {
     article {
-      grid-template-columns: 3fr 9fr;
-      grid-template-rows: auto auto 2fr;
-      column-gap: var(--spacer-quater);
-      img {
-        width: 100%;
-        grid-row: 1/-1;
-        grid-column: 1/2;
-      }
-      :not(img) {
-        grid-column: 2/-1;
-        padding: 0;
+      --font-base: 1.25rem;
+      h3 {
+        font-size: 1em;
       }
     }
   }
@@ -36,33 +31,8 @@ $breakpoint-tablet: 768px;
 
 // *** LARGE SCREENS ***
 //* Applies to everything 1200px wide and larger.
-$breakpoint-tablet: 1400px;
-@media (min-width: $breakpoint-tablet) {
-  #news_teaser {
-    columns: 2;
-    column-gap: 1rem;
-    div {
-      display: inline-block;
-    }
-
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // column-gap: var(--spacer);
-    hr {
-      grid-column: 1 /-1;
-    }
-    article {
-      // display: inline-block;
-      grid-template-columns: 4fr 8fr;
-      h5 {
-        font-size: 0.5em;
-      }
-      h3 {
-        font-size: 1em;
-      }
-      p {
-        font-size: 0.67em;
-      }
-    }
-  }
-}
+// $breakpoint-tablet: 1400px;
+// @media (min-width: $breakpoint-tablet) {
+//   section#news_teaser {
+//   }
+// }
