@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Button from '../components/Buttons'
 
-const bio = () => {
+export default function bio() {
   return (
     <div className='container'>
       <h1>Hello from Bio page!</h1>
@@ -52,5 +52,3 @@ const bio = () => {
     </div>
   )
 }
-
-export default bio

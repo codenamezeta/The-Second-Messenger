@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import Nav from '../components/Nav'
-
-const merch = () => {
+export default function merch() {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [items, setItems] = useState({})
@@ -38,7 +36,6 @@ const merch = () => {
   } else {
     return (
       <>
-        <Nav />
         <h1>Hello From /Merch</h1>
         <ul>
           {{ items }}
@@ -52,5 +49,3 @@ const merch = () => {
     )
   }
 }
-
-export default merch

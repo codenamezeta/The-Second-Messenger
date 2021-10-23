@@ -5,7 +5,7 @@ import Image from 'next/image'
 //TODO: Auto focus when nav state is toggled.
 //? Maybe try: document.getElementById("nav_open_item").focus()
 
-const Nav = () => {
+export default function Nav() {
   const [navOpen, setNavOpen] = useState(false)
 
   // useEffect(() => {
@@ -135,5 +135,3 @@ const Nav = () => {
     </>
   )
 }
-
-export default Nav

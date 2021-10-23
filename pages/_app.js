@@ -1,8 +1,12 @@
 import '../styles/theme.scss'
 import '../styles/Nav.scss'
+import Nav from '../components/Nav'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function Site({ Component, pageProps }) {
+  return (
+    <>
+      <Nav />
+      <Component {...pageProps} />
+    </>
+  )
 }
-
-export default MyApp

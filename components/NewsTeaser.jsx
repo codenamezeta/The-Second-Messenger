@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 //? https://www.npmjs.com/package/react-responsive-masonry
 //? https://stackoverflow.com/questions/43357501/react-prop-types-error
 
-const NewsTeaser = () => {
+export default function NewsTeaser() {
   return (
     <section className='container' id={selectors.news_teaser}>
       <h2>Latest Updates</h2>
@@ -125,5 +125,3 @@ const NewsTeaser = () => {
     </section>
   )
 }
-
-export default NewsTeaser

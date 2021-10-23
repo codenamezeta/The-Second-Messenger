@@ -6,7 +6,7 @@ import Button from './Buttons'
 //TODO: Move this components SCSS out of theme.scss and into it's own module
 //TODO: Map over a links array prop that renders a store icon for each link
 
-const LatestRelease = () => {
+export default function LatestRelease() {
   // const [postData, setPost] = useState(null)
   // useEffect(() => {
   //   sanityClient
@@ -51,5 +51,3 @@ const LatestRelease = () => {
     </section>
   )
 }
-
-export default LatestRelease

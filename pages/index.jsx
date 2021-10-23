@@ -1,18 +1,15 @@
-import Nav from '../components/nav'
+// import Nav from '../components/nav'
 import Button from '../components/Buttons'
 // import Image from 'next/image'
 import SubscribeFormMC from '../components/newsletter/SubscribeFormMC'
 import Link from 'next/link'
-// import { useRef } from 'react'
 import NewsTeaser from '../components/NewsTeaser'
 import LatestRelease from '../components/LatestRelease'
 
-// import Song from '../public/audio/dream-girl.mp3'
-
-const index = () => {
+export default function index() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main className='container' id='intro'>
         <h1>The Second Messenger</h1>
         <p>
@@ -64,5 +61,3 @@ const index = () => {
     </>
   )
 }
-
-export default index

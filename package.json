@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.21.0",
+    "@sanity/image-url": "^1.0.1",
+    "groq": "^2.15.0",
     "next": "^11.1.2",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
